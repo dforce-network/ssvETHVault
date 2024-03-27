@@ -17,7 +17,7 @@ const config: HardhatUserConfig = {
 	solidity: {
 		compilers: [
 			{
-				version: '0.8.17',
+				version: '0.8.10',
 				settings: {
 					optimizer: {
 						enabled: true,
@@ -36,32 +36,16 @@ const config: HardhatUserConfig = {
 			initialBaseFeePerGas: 0, // to fix : https://github.com/sc-forks/solidity-coverage/issues/652, see https://github.com/sc-forks/solidity-coverage/issues/652#issuecomment-896330136
 		},
 		localhost: {
-			url: node_url('localhost'),
-			accounts: accounts(),
-		},
-		staging: {
-			url: node_url('rinkeby'),
-			accounts: accounts('rinkeby'),
-		},
-		production: {
-			url: node_url('mainnet'),
-			accounts: accounts('mainnet'),
-		},
-		mainnet: {
-			url: node_url('mainnet'),
-			accounts: accounts('mainnet'),
+			url: 'http://localhost:24012/rpc', // truffle-dashboard
+			timeout: 200000,
 		},
 		sepolia: {
-			url: node_url('sepolia'),
-			accounts: accounts('sepolia'),
+			url: 'http://localhost:24012/rpc', // truffle-dashboard
+			timeout: 200000,
 		},
-		kovan: {
-			url: node_url('kovan'),
-			accounts: accounts('kovan'),
-		},
-		goerli: {
-			url: node_url('goerli'),
-			accounts: accounts('goerli'),
+		holesky: {
+			url: 'http://localhost:24012/rpc', // truffle-dashboard
+			timeout: 200000,
 		},
 	}),
 	paths: {
